@@ -9,11 +9,16 @@ function ContactForm(){
     }
     console.log(formState);
 
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log(formState);
+    }
+
     //JSX
     return(
         <section>
             <h1>Contact me</h1>
-            <form id="contact-form">
+            <form id="contact-form" onSubmit={handleSubmit}>
                 <div>
                     <lable htmlFor="name">Name:</lable>
                     <input type="text" name="name" defaultValue={name} onChange={handleChange}/>
